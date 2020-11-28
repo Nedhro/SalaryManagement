@@ -17,57 +17,8 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto'
           rel='stylesheet' type='text/css'/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <style>
-        .headText {
-            background: rgb(0, 3, 36);
-            background: linear-gradient(90deg, rgba(0, 3, 36, 1) 0%, rgba(9, 121, 97, 1) 54%, rgba(0, 212, 255, 1) 100%);
-            color: white;
-        }
-    </style>
-    <script>
-        function postData() {
-            var employeeName = $("#employeeName").val();
-            var grade = $("#grade").val();
-            var address = $("#address").val();
-            var mobile = $("#mobile").val();
-            var accountName = $("#accountName").val();
-            var accountNumber = $("#accountNumber").val();
-            var accountType = $("#accountType").val();
-            var currentBalance = $("#currentBalance").val();
-            var bankName = $("#bankName").val();
-            var branchName = $("#branchName").val();
-            var employeeData = {
-                "employeeName": employeeName,
-                "grade": grade,
-                "address": address,
-                "mobile": mobile,
-                "account": {
-                    "accountName": accountName,
-                    "accountNumber": accountNumber,
-                    "accountType": accountType,
-                    "currentBalance": currentBalance,
-                    "bankName": bankName,
-                    "branchName": branchName
-                }
-            };
-            $.ajax({
-                type: 'POST',
-                url: '/employee',
-                data: JSON.stringify(employeeData),
-                dataType: 'json',
-                beforeSend: function (xhr) {
-                    xhr.setRequestHeader("Accept", "application/json");
-                    xhr.setRequestHeader("Content-Type", "application/json");
-                },
-                success: function (result) {
-                    console.log(result);
-                },
-                error: function (jqXHR) {
-                    console.log(jqXHR);
-                }
-            });
-        }
-    </script>
+    <script type="text/javascript" src="js/newEmployee.js"></script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div>

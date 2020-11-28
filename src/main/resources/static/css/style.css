@@ -1,0 +1,6 @@
+
+.headText {
+    background: rgb(0, 3, 36);
+    background: linear-gradient(90deg, rgba(0, 3, 36, 1) 0%, rgba(9, 121, 97, 1) 54%, rgba(0, 212, 255, 1) 100%);
+    color: white;
+}
