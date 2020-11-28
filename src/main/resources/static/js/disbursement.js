@@ -19,12 +19,16 @@ $(document).ready(
                     dataType: 'json',
                     success: function (response) {
                         var salary = response.content;
+                        var sum = 0;
                         for (var j = 0; j < employees.length; j++) {
                             var noOfEmp = document.getElementById("noOfEmp");
                             noOfEmp.innerHTML = employees.length - 1;
                             var totalSalary;
+
                             for (let x in salary) {
                                 if (salary[x].grade === employees[j].grade) {
+                                    console.log(sum = sum + salary[x].total);
+
                                     totalSalary = salary[x].total;
                                     var newArr = [];
                                     employeeTable.append("<tr><td>" + j + "</td><td>"
@@ -41,6 +45,9 @@ $(document).ready(
                                 }
                             }
                         }
+                        console.log('TOTAL SALARY IS ' + sum);
+                        var totalField = document.getElementById("total");
+                        totalField.innerHTML =parseFloat(sum);
                     },
                     error: function (e) {
                         console.log("ERROR: ", e);
